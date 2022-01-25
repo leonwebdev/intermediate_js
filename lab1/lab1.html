@@ -11,7 +11,8 @@
             margin: 0 auto;
             width: 600px;
         }
-        #showbox{
+
+        #showbox {
             border: 1px solid black;
             min-height: 100px;
         }
@@ -21,84 +22,88 @@
 <body>
     <h1>Lihang Yao</h1>
     <h2>Lab1</h2>
-    
-    <form
-        name="registration"
-        id="registration"
-        action="https://uwpace.ca/post.php"
-        method="post"
-        onsubmit="validateForm(event,this);"
-        novalidate>
-        
+
+    <form name="registration" id="registration" action="https://uwpace.ca/post.php" method="post"
+        onsubmit="validateForm(event,this);" novalidate>
+
         <p><label for="first_name">First Name</label></p>
         <p><input type="text" name="first_name" id="first_name"></p>
-        
+
         <p><label for="last_name">Last Name</label></p>
         <p><input type="text" name="last_name" id="last_name"></p>
-        
+
         <p><label for="email">Email</label></p>
         <p><input type="text" name="email" id="email"></p>
-        
+
         <p><label for="postal_code">Post Code</label></p>
         <p><input type="text" name="postal_code" id="postal_code"></p>
-        
+
         <p><label for="age">Age</label></p>
         <p><input type="text" name="age" id="age"></p>
-        
+
         <p><button type="submit">Submit</button></p>
     </form>
 
     <div id="showbox"></div>
-    
+
     <script>
         // global variable
         var errors = [];
         // function
-        function validateForm(e, el){
+
+        function validateFirstName() {
+            let v_first_name = document.getElementById('registration').first_name.value;
+            if (v_first_name =='') {
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function validateForm(e, el) {
             e.preventDefault();
             errors = [];
-            // if (validateFirstName()) {
-                
-            // }else{
-            //     errors.push('Please input First Name')
-            // }
+            if (validateFirstName()) {
+
+            } else {
+                errors.push('Please input First Name')
+            }
 
             // if (validateLastName()) {
-                
-            // }else{
+
+            // } else {
             //     errors.push('Please input Last Name')
             // }
 
             // if (validateEmail()) {
-                
-            // }else{
-            //     errors.push('Please input Email')
+
+            // } else {
+            //     errors.push('Please input valid Email')
             // }
 
             // if (validatePostalCode()) {
-                
-            // }else{
-            //     errors.push('Please input Postal Code')
+
+            // } else {
+            //     errors.push('Please input 6-character Postal Code')
             // }
 
             // if (validateAge()) {
-                
-            // }else{
-            //     errors.push('Please input Age')
+
+            // } else {
+            //     errors.push('Please input valid Age')
             // }
-            
+
             document.getElementById('showbox').innerHTML = '';
 
-            if(errors.length==0){
-            document.getElementById('showbox').innerHTML += '<p>Form submission accepted!</p>';
-            el.reset();
-            }else{
+            if (errors.length == 0) {
+                document.getElementById('showbox').innerHTML += '<p>Form submission accepted!</p>';
+                el.reset();
+            } else {
                 for (let i = 0; i < errors.length; i++) {
-                    document.getElementById('showbox').innerHTML += '<p>'+errors[i]+'</p>';
-                    
+                    document.getElementById('showbox').innerHTML += '<p>' + errors[i] + '</p>';
                 }
             }
-            
+
         }
 
     </script>
