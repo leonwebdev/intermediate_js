@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>get element by id</title>
+    <script>
+        function replaceContent(){
+            var el = document.getElementById('content');
+            console.log(el);
+            el.innerHTML = ''
+        }
+    </script>
 </head>
+
 <body>
-    
+    <h1>get element by id</h1>
+    <p><button onclick="">replace content</button></p>
+    <p><button onclick="">add to content</button></p>
+    <p><button onclick="">do something won't work</button></p>
+
+    <div id="content">
+        <h2>this is my cpntent</h2>
+    </div>
+
 </body>
+
 </html>
