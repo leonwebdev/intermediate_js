@@ -1,22 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LAB1</title>
     <style>
-        body{
+
+        body {
             margin: 0 auto;
             width: 600px;
         }
+
+        #showbox {
+            border: 1px solid black;
+            min-height: 100px;
+        }
     </style>
 </head>
+
+
 <body>
     <h1>Lihang Yao</h1>
     <h2>Lab1</h2>
 
 
-    
+    <form name="registration" id="registration" action="https://uwpace.ca/post.php" method="post"
+        onsubmit="validateForm(event,this);" novalidate>
+
+        <p><label for="first_name">First Name</label></p>
+        <p><input type="text" name="first_name" id="first_name"></p>
+
+        <p><label for="last_name">Last Name</label></p>
+        <p><input type="text" name="last_name" id="last_name"></p>
+
+        <p><label for="email">Email</label></p>
+        <p><input type="text" name="email" id="email"></p>
+
+        <p><label for="postal_code">Post Code</label></p>
+        <p><input type="text" name="postal_code" id="postal_code"></p>
+
+        <p><label for="age">Age</label></p>
+        <p><input type="text" name="age" id="age"></p>
+
+        <p><button type="submit">Submit</button></p>
+    </form>
+
+    <div id="showbox"></div>
+
+    <script>
+        // global variable
+        var errors = [];
+        // function
+
+        function validateFirstName() {
+            let v_first_name = document.getElementById('registration').first_name.value;
+            if (v_first_name =='') {
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function validateLastName() {
+            let v_last_name = document.getElementById('registration').last_name.value;
+            if (v_last_name =='') {
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function validateEmail() {
+            let v_email = document.getElementById('registration').email.value;
+            let factor = v_email.indexOf('@');
+            if (factor == -1) {
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function validatePostalCode() {
+            let v_postal_code = document.getElementById('registration').postal_code.value;
+            let factor = v_postal_code.length;
+            if (factor == 6 ) {
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        function validateAge() {
+            let v_age = document.getElementById('registration').age.value;
+            let factor = isNaN(parseInt(v_age));
+            if (factor == false) {
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        
+        function validateForm(e, el) {
+            e.preventDefault();
+            errors = [];
+            if (validateFirstName()) {
+
+            } else {
+                errors.push('Please input First Name')
+            }
+
+            if (validateLastName()) {
+
+            } else {
+                errors.push('Please input Last Name')
+            }
+
+            if (validateEmail()) {
+
+            } else {
+                errors.push('Please input valid Email')
+            }
+
+            if (validatePostalCode()) {
+
+            } else {
+                errors.push('Please input 6-character Postal Code')
+            }
+
+            if (validateAge()) {
+                
+            } else {
+                errors.push('Please input valid Age')
+            }
+
+            document.getElementById('showbox').innerHTML = '';
+
+            if (errors.length == 0) {
+                document.getElementById('showbox').innerHTML += '<p>Form submission accepted!</p>';
+                el.reset();
+            } else {
+                for (let i = 0; i < errors.length; i++) {
+                    document.getElementById('showbox').innerHTML += '<p>' + errors[i] + '</p>';
+                }
+            }
+
+        }
+
+    </script>
+
 </body>
+
+
 </html>
