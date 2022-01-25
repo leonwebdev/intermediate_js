@@ -57,42 +57,44 @@
         function validateForm(e, el){
             e.preventDefault();
             errors = [];
-            if (validateFirstName()) {
+            // if (validateFirstName()) {
                 
-            }else{
-                errors.push('Please input First Name')
-            }
+            // }else{
+            //     errors.push('Please input First Name')
+            // }
 
-            if (validateLastName()) {
+            // if (validateLastName()) {
                 
-            }else{
-                errors.push('Please input Last Name')
-            }
+            // }else{
+            //     errors.push('Please input Last Name')
+            // }
 
-            if (validateEmail()) {
+            // if (validateEmail()) {
                 
-            }else{
-                errors.push('Please input Email')
-            }
+            // }else{
+            //     errors.push('Please input Email')
+            // }
 
-            if (validatePostalCode()) {
+            // if (validatePostalCode()) {
                 
-            }else{
-                errors.push('Please input Postal Code')
-            }
+            // }else{
+            //     errors.push('Please input Postal Code')
+            // }
 
-            if (validateAge()) {
+            // if (validateAge()) {
                 
-            }else{
-                errors.push('Please input Age')
-            }
+            // }else{
+            //     errors.push('Please input Age')
+            // }
             
+            document.getElementById('showbox').innerHTML = '';
+
             if(errors.length==0){
             document.getElementById('showbox').innerHTML += '<p>Form submission accepted!</p>';
             el.reset();
             }else{
                 for (let i = 0; i < errors.length; i++) {
-                    document.getElementById('showbox').innerHTML += '<p>'+errors[i]+'</p>'
+                    document.getElementById('showbox').innerHTML += '<p>'+errors[i]+'</p>';
                     
                 }
             }
