@@ -60,6 +60,46 @@
             }
         }
 
+        function validateLastName() {
+            let v_last_name = document.getElementById('registration').last_name.value;
+            if (v_last_name =='') {
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function validateEmail() {
+            let v_email = document.getElementById('registration').email.value;
+            let factor = v_email.indexOf('@');
+            if (factor == -1) {
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        function validatePostalCode() {
+            let v_postal_code = document.getElementById('registration').postal_code.value;
+            let factor = v_postal_code.length;
+            if (factor == 6 ) {
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        function validateAge() {
+            let v_age = document.getElementById('registration').age.value;
+            let factor = isNaN(parseInt(v_age));
+            if (factor == false) {
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        
         function validateForm(e, el) {
             e.preventDefault();
             errors = [];
@@ -69,29 +109,29 @@
                 errors.push('Please input First Name')
             }
 
-            // if (validateLastName()) {
+            if (validateLastName()) {
 
-            // } else {
-            //     errors.push('Please input Last Name')
-            // }
+            } else {
+                errors.push('Please input Last Name')
+            }
 
-            // if (validateEmail()) {
+            if (validateEmail()) {
 
-            // } else {
-            //     errors.push('Please input valid Email')
-            // }
+            } else {
+                errors.push('Please input valid Email')
+            }
 
-            // if (validatePostalCode()) {
+            if (validatePostalCode()) {
 
-            // } else {
-            //     errors.push('Please input 6-character Postal Code')
-            // }
+            } else {
+                errors.push('Please input 6-character Postal Code')
+            }
 
-            // if (validateAge()) {
-
-            // } else {
-            //     errors.push('Please input valid Age')
-            // }
+            if (validateAge()) {
+                
+            } else {
+                errors.push('Please input valid Age')
+            }
 
             document.getElementById('showbox').innerHTML = '';
 
