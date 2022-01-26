@@ -22,10 +22,38 @@
 <body>
     <h1>Lihang Yao</h1>
     <h2>Lab2</h2>
-    <button id="add_items" onclick="addTask()">Add a cookie</button>
-    <button id="add_items" onclick="addTask()">Print cookies</button>
-    <button id="add_items" onclick="addTask()">Clear cookies</button>
+    <button id="add_cookie" onclick="addCookie()">Add a cookie</button>
+    <button id="print_cookie" onclick="printCookie()">Print cookies</button>
+    <button id="clear_cookie" onclick="clearCookie()">Clear cookies</button>
     <div id="showbox"></div>
+
+    <script>
+        // Global Variable
+
+        // Functions
+        /** 
+         * @Function: addCookie [add a new cookie] 
+         * @Param:  no param
+         * @Return:  void
+         */
+        function addCookie() {
+            var add_cookie_key = prompt('Please input cookie key.');
+            var add_cookie_value = prompt('Please input cookie value.');
+            document.cookie = add_cookie_key +'='+ add_cookie_value;
+            console.log(document.cookie);
+        }
+
+        function printCookie() {
+
+        }
+
+        function clearCookie() {
+
+        }
+
+
+    </script>
+
 </body>
 
 </html>
