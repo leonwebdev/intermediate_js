@@ -9,13 +9,14 @@
     <style>
         body {
             margin: 0 auto;
-            width: 600px;
+            width: 500px;
         }
 
         #showbox {
             border: 1px solid black;
             min-height: 100px;
             margin-top: 50px;
+            padding: 15px;
         }
 
         button {
@@ -55,6 +56,29 @@
          * @Return:  void
          */
         function printCookie() {
+            var cookie_matrix = {
+                keys: [],
+                values: []
+            }
+
+            var cookie_array = document.cookie.split(';');
+            console.log(cookie_array);
+
+            for (let i = 0; i < cookie_array.length; i++) {
+                var raw_cookie = cookie_array[i].split('=');
+                console.log(raw_cookie);
+                cookie_matrix.keys.push(raw_cookie[0].trim());
+                cookie_matrix.values.push(raw_cookie[1].trim());
+            }
+            console.log(cookie_matrix);
+
+            var show_content = '';
+            for (let i = 0; i < cookie_matrix.keys.length; i++) {
+                show_content += '<p>' + cookie_matrix.keys[i] + ': ' + cookie_matrix.values[i] + '</p>';
+
+            }
+            document.getElementById('showbox').innerHTML = '';
+            document.getElementById('showbox').innerHTML = show_content;
 
         }
 
