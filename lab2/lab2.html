@@ -35,7 +35,10 @@
 
     <script>
         // Global Variable
-
+        var cookie_matrix = {
+            keys: [],
+            values: []
+        }
         // Functions
 
         /** 
@@ -56,11 +59,10 @@
          * @Return:  void
          */
         function printCookie() {
-            var cookie_matrix = {
+            cookie_matrix = {
                 keys: [],
                 values: []
             }
-
             var cookie_array = document.cookie.split(';');
             console.log(cookie_array);
 
@@ -82,7 +84,22 @@
 
         }
 
+        /** 
+         * @Function: clearCookie [erase all cookies] 
+         * @Param:  no param
+         * @Return:  void
+         */
         function clearCookie() {
+            for (let i = 0; i < cookie_matrix.keys.length; i++) {
+                document.cookie = cookie_matrix.keys[i] + '= ;Max-Age=-1';
+                console.log(document.cookie);
+            }
+            cookie_matrix = {
+                keys: [],
+                values: []
+            }
+            document.getElementById('showbox').innerHTML = '';
+            alert('All Cookies Erased!')
 
         }
 
