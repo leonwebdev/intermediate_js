@@ -15,6 +15,11 @@
         #showbox {
             border: 1px solid black;
             min-height: 100px;
+            margin-top: 50px;
+        }
+
+        button {
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -31,6 +36,7 @@
         // Global Variable
 
         // Functions
+
         /** 
          * @Function: addCookie [add a new cookie] 
          * @Param:  no param
@@ -39,10 +45,15 @@
         function addCookie() {
             var add_cookie_key = prompt('Please input cookie key.');
             var add_cookie_value = prompt('Please input cookie value.');
-            document.cookie = add_cookie_key +'='+ add_cookie_value;
+            document.cookie = add_cookie_key + '=' + add_cookie_value;
             console.log(document.cookie);
         }
 
+        /** 
+         * @Function: printCookie [print all cookies] 
+         * @Param:  no param
+         * @Return:  void
+         */
         function printCookie() {
 
         }
