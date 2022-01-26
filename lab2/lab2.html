@@ -49,6 +49,7 @@
         function addCookie() {
             var add_cookie_key = prompt('Please input cookie key.');
             var add_cookie_value = prompt('Please input cookie value.');
+            // add cookie
             document.cookie = add_cookie_key + '=' + add_cookie_value;
             console.log(document.cookie);
         }
@@ -59,13 +60,15 @@
          * @Return:  void
          */
         function printCookie() {
+            // erase all previous data prior to print
             cookie_matrix = {
                 keys: [],
                 values: []
             }
+            // split cookie into individual arraies
             var cookie_array = document.cookie.split(';');
             console.log(cookie_array);
-
+            // extract keys and values into cookie matrix
             for (let i = 0; i < cookie_array.length; i++) {
                 var raw_cookie = cookie_array[i].split('=');
                 console.log(raw_cookie);
@@ -73,7 +76,7 @@
                 cookie_matrix.values.push(raw_cookie[1].trim());
             }
             console.log(cookie_matrix);
-
+            // show content in webpage
             var show_content = '';
             for (let i = 0; i < cookie_matrix.keys.length; i++) {
                 show_content += '<p>' + cookie_matrix.keys[i] + ': ' + cookie_matrix.values[i] + '</p>';
@@ -90,15 +93,19 @@
          * @Return:  void
          */
         function clearCookie() {
+            // delete cookies one by one
             for (let i = 0; i < cookie_matrix.keys.length; i++) {
                 document.cookie = cookie_matrix.keys[i] + '= ;Max-Age=-1';
                 console.log(document.cookie);
             }
+            // erase cookie matrix
             cookie_matrix = {
                 keys: [],
                 values: []
             }
+            // erase showbox in webpage
             document.getElementById('showbox').innerHTML = '';
+            // alert a message
             alert('All Cookies Erased!')
 
         }
