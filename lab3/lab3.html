@@ -40,6 +40,11 @@
             margin: 1.5em 0;
             font-size: 1.5em;
         }
+
+        .error_box {
+            color: #f00;
+            font-size: 1.5em;
+        }
     </style>
 </head>
 
@@ -59,8 +64,8 @@
             </div>
 
             <div id="document" class="column">
-                <h1 id="h1">wecrfawecrawc</h1>
-                <p id="div">wecrfawecrawc</p>
+                <h1 id="h1"></h1>
+                <p id="div"></p>
             </div>
         </div>
     </div>
@@ -73,16 +78,36 @@
             console.log(e)
             console.log(el)
             e.preventDefault();
+            // erase all error boxes and previous content
+            document.getElementById('title_error_box').innerHTML = '';
+            document.getElementById('textarea_error_box').innerHTML = '';
+            document.getElementById('h1').innerHTML = '';
+            document.getElementById('div').innerHTML = '';
 
-            // do validation
-
-            // output
+            // get input values
             var get_title = document.forms[0].title.value;
+            var get_content = document.forms[0].content.value;
+
+            // do title validation
+            if (get_title == null || get_title == '') {
+                document.getElementById('title_error_box').innerHTML = `<p>You shall input title here</p>`;
+                document.getElementById('title').focus();
+                return;
+            }
+
+            // do content validation
+            if (get_content == null || get_content == '') {
+                document.getElementById('textarea_error_box').innerHTML = `<p>You shall input content here</p>`;
+                document.getElementById('content').focus();
+                return;
+            }
+
+            // output in adjacent div
+
             console.log(get_title);
             document.getElementById('h1').innerHTML = '';
             document.getElementById('h1').innerHTML = get_title;
 
-            var get_content = document.forms[0].content.value;
             console.log(get_content);
             document.getElementById('div').innerHTML = '';
             document.getElementById('div').innerHTML = get_content;
