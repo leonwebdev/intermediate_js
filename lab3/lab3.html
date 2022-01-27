@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,24 +9,58 @@
     <style>
         body {
             margin: 0 auto;
-            max-width: 700px;
-        }
-        body>div {
-            margin-bottom: 50px;
-        }
-        #container {
-            display: flex;
             width: min-content;
         }
 
+        body>div {
+            margin-bottom: 50px;
+        }
+
+        #container {
+            display: flex;
+            width: 100%;
+            margin: 50px auto;
+        }
+
+        .column {
+            flex-grow: 1;
+            border: 1px solid black;
+            min-width: 400px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        #form {
+            margin-right: 30px;
+        }
+
+        label, button{
+            display: block;
+            margin: 1.5em 0;
+            font-size: 1.5em;
+        }
     </style>
 </head>
+
 <body>
     <div>
         <div id="container">
-           <div id="form"></div>
-           <div id="document"></div>
+            <div id="form" class="column">
+                <form action="">
+                    <label for="title">Please input your title</label>
+                    <input type="text" name="title" id="title">
+                    <label for="content">Please input your content</label>
+                    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                    <button type="submit" onclick="showPreview(e,this)">Preview</button>
+                </form>
+            </div>
+
+            <div id="document" class="column">
+                <h1 id="h1">wecrfawecrawc</h1>
+                <p id="div">wecrfawecrawc</p>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
