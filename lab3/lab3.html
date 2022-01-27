@@ -69,7 +69,7 @@
 
 
         // ********** FUNCTION **********
-        function showPreview(e,el) {
+        function showPreview(e, el) {
             console.log(e)
             console.log(el)
             e.preventDefault();
@@ -84,8 +84,11 @@
 
             var get_content = document.forms[0].content.value;
             console.log(get_content);
+            document.getElementById('div').innerHTML = '';
+            document.getElementById('div').innerHTML = get_content;
+
         }
-        
+
     </script>
 </body>
 
