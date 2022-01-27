@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3</title>
+    <style>
+        body {
+            margin: 0 auto;
+            width: min-content;
+        }
+
+        body>div {
+            margin-bottom: 50px;
+        }
+
+        #container {
+            display: flex;
+            width: 100%;
+            margin: 50px auto;
+        }
+
+        .column {
+            flex-grow: 1;
+            border: 1px solid black;
+            min-width: 400px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        #form {
+            margin-right: 30px;
+        }
+
+        label,
+        button {
+            display: block;
+            margin: 1.5em 0;
+            font-size: 1.5em;
+        }
+
+        .error_box {
+            color: #f00;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="container">
+            <div id="form" class="column">
+                <form action="">
+                    <label for="title">Please input your title</label>
+                    <div class="error_box" id="title_error_box"></div>
+                    <input type="text" name="title" id="title">
+                    <label for="content">Please input your content</label>
+                    <div class="error_box" id="textarea_error_box"></div>
+                    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                    <button type="submit" onclick="showPreview(event,this)">Preview</button>
+                </form>
+            </div>
+
+            <div id="document" class="column">
+                <h1 id="h1"></h1>
+                <p id="div"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // ********** GLOBAL VARIABLE **********
+
+
+        // ********** FUNCTION **********
+
+        /** 
+         * @Function:  showPreview [show content that user input into the right column]
+         * @Param:  e [event]
+         * @Param:  el [this]
+         * @Return:  void
+         */
+        function showPreview(e, el) {
+            console.log(e)
+            console.log(el)
+            e.preventDefault();
+            // erase all error boxes and previous content
+            document.getElementById('title_error_box').innerHTML = '';
+            document.getElementById('textarea_error_box').innerHTML = '';
+            document.getElementById('h1').innerHTML = '';
+            document.getElementById('div').innerHTML = '';
+
+            // get input values
+            var get_title = document.forms[0].title.value;
+            var get_content = document.forms[0].content.value;
+
+            // do title validation
+            if (get_title == null || get_title == '') {
+                document.getElementById('title_error_box').innerHTML = `<p>You shall input title here</p>`;
+                document.getElementById('title').focus();
+                return;
+            }
+
+            // do content validation
+            if (get_content == null || get_content == '') {
+                document.getElementById('textarea_error_box').innerHTML = `<p>You shall input content here</p>`;
+                document.getElementById('content').focus();
+                return;
+            }
+
+            // output in adjacent div
+
+            console.log(get_title);
+            document.getElementById('h1').innerHTML = '';
+            document.getElementById('h1').innerHTML = get_title;
+
+            console.log(get_content);
+            document.getElementById('div').innerHTML = '';
+            document.getElementById('div').innerHTML = get_content;
+
+        }
+
+    </script>
+</body>
+
+</html>
