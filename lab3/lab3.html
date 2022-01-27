@@ -34,7 +34,8 @@
             margin-right: 30px;
         }
 
-        label, button{
+        label,
+        button {
             display: block;
             margin: 1.5em 0;
             font-size: 1.5em;
@@ -48,10 +49,12 @@
             <div id="form" class="column">
                 <form action="">
                     <label for="title">Please input your title</label>
+                    <div class="error_box" id="title_error_box"></div>
                     <input type="text" name="title" id="title">
                     <label for="content">Please input your content</label>
+                    <div class="error_box" id="textarea_error_box"></div>
                     <textarea name="content" id="content" cols="30" rows="10"></textarea>
-                    <button type="submit" onclick="showPreview(e,this)">Preview</button>
+                    <button type="submit" onclick="showPreview(event,this)">Preview</button>
                 </form>
             </div>
 
@@ -61,6 +64,29 @@
             </div>
         </div>
     </div>
+    <script>
+        // ********** GLOBAL VARIABLE **********
+
+
+        // ********** FUNCTION **********
+        function showPreview(e,el) {
+            console.log(e)
+            console.log(el)
+            e.preventDefault();
+
+            // do validation
+
+            // output
+            var get_title = document.forms[0].title.value;
+            console.log(get_title);
+            document.getElementById('h1').innerHTML = '';
+            document.getElementById('h1').innerHTML = get_title;
+
+            var get_content = document.forms[0].content.value;
+            console.log(get_content);
+        }
+        
+    </script>
 </body>
 
 </html>
