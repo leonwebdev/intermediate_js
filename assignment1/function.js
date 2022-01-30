@@ -94,6 +94,7 @@ function validateForm(e, el) {
     validateLastName();
     validateEmail();
     validatePostalCode();
+    validatePhone();
 
     // show error boxes on page
     for (let i = 0; i < error_box_query.length; i++) {
@@ -145,6 +146,21 @@ function validatePostalCode() {
     }else if (factor != 6) {
         error_flag = true;
         error_boxes.error_message[3] = 'Please input valid 6-characters postal code';
+        console.log(error_flag);
+    }
+}
+
+function validatePhone() {
+    let v_phone = document.getElementById('registration').phone.value.split('-');
+    console.log(v_phone);
+    let factor = v_phone.length;
+    if (v_phone == '') {
+        error_flag = true;
+        error_boxes.error_message[4] = 'Please input phone number';
+        console.log(error_flag);
+    }else if (factor != 10) {
+        error_flag = true;
+        error_boxes.error_message[4] = 'Please input valid phone number in a format of 123-123-1234 ';
         console.log(error_flag);
     }
 }
