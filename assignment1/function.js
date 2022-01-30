@@ -5,6 +5,12 @@ var error_boxes = {
 }
 
 var error_flag = false;
+
+var cookie_matrix = {
+    keys: [],
+    values: []
+}
+
 /**
  * [showTime : get the current Time and return a string of a formatted date]
  *
@@ -111,12 +117,14 @@ function validateForm(e, el) {
         factor_any_error += error_boxes.error_message[i];
         console.log(factor_any_error);
     }
-    
+
     if (factor_any_error != '') {
         return;
     }
 
-    console.log('there is no error, let\'s proceed')
+    console.log('there is no error, let\'s proceed');
+
+    window.location.href = "output.html";
 }
 
 function validateFirstName() {
