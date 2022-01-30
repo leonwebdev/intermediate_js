@@ -166,6 +166,7 @@ div.showbox_item:last-of-type {
 
 #complete_award {
     font-size: 5em;
+    text-align: center;
 }
 
 .register_fail_line:first-of-type {
@@ -175,10 +176,11 @@ div.showbox_item:last-of-type {
 a {
     outline: none;
     text-decoration: none;
+    font-weight: 700;
 }
 
 a:link {
-    color: #ff5100;
+    color: #ff1100;
 }
 
 a:visited {
