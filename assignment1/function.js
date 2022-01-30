@@ -4,7 +4,7 @@ var error_boxes = {
     error_message: []
 }
 
-var error_flag = true;
+var error_flag = false;
 /**
  * [showTime : get the current Time and return a string of a formatted date]
  *
@@ -71,17 +71,66 @@ function showTime() {
 
 function validateForm(e, el) {
     e.preventDefault();
+    error_boxes = {
+        error_box: [],
+        error_message: []
+    }
+    console.log(error_boxes);
 
     // query all div.error_box
     let error_box_query = document.querySelectorAll('div.error_box');
     console.log(error_box_query);
 
+    // initial error_boxes to assign message to it
     for (let i = 0; i < error_box_query.length; i++) {
 
         error_boxes.error_box[i] = error_box_query[i];
-        error_boxes.error_message[i] = 'error ' + i;
+        error_boxes.error_message[i] = '';
         error_boxes.error_box[i].innerHTML = error_boxes.error_message[i];
         console.log(error_boxes);
     }
 
+    validateFirstName();
+    validateLastName();
+    validateEmail();
+
+    // show error boxes on page
+    for (let i = 0; i < error_box_query.length; i++) {
+
+        error_boxes.error_box[i].innerHTML = error_boxes.error_message[i];
+        console.log(error_boxes);
+    }
 }
+
+function validateFirstName() {
+    let v_first_name = document.getElementById('registration').first_name.value;
+    if (v_first_name == '') {
+        error_flag = true;
+        error_boxes.error_message[0] = 'Please input first name';
+        console.log(error_flag);
+    }
+}
+
+function validateLastName() {
+    let v_last_name = document.getElementById('registration').last_name.value;
+    if (v_last_name == '') {
+        error_flag = true;
+        error_boxes.error_message[1] = 'Please input last name';
+        console.log(error_flag);
+    }
+}
+
+function validateEmail() {
+    let v_email = document.getElementById('registration').email.value;
+    let factor = v_email.indexOf('@');
+    if (v_email == '') {
+        error_flag = true;
+        error_boxes.error_message[2] = 'Please input email';
+        console.log(error_flag);
+    }else if (factor == -1) {
+        error_flag = true;
+        error_boxes.error_message[2] = 'Please input valid email with \'@\' symbol';
+        console.log(error_flag);
+    }
+}
+
