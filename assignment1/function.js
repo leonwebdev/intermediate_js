@@ -1,5 +1,12 @@
+// ************Global Variables******************
+var error_boxes = {
+    error_box: [],
+    error_message: []
+}
+
+var error_flag = true;
 /**
- * [showTime : get the current Time and output on the page]
+ * [showTime : get the current Time and return a string of a formatted date]
  *
  * @return  {[formatted_date]}  [return a string of a formatted date]
  */
@@ -59,5 +66,22 @@ function showTime() {
     console.log(formatted_date);
 
     return formatted_date;
+
+}
+
+function validateForm(e, el) {
+    e.preventDefault();
+
+    // query all div.error_box
+    let error_box_query = document.querySelectorAll('div.error_box');
+    console.log(error_box_query);
+
+    for (let i = 0; i < error_box_query.length; i++) {
+
+        error_boxes.error_box[i] = error_box_query[i];
+        error_boxes.error_message[i] = 'error ' + i;
+        error_boxes.error_box[i].innerHTML = error_boxes.error_message[i];
+        console.log(error_boxes);
+    }
 
 }

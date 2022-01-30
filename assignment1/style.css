@@ -65,7 +65,7 @@ h1 {
 
 .required_input::before {
     content: '* ';
-    color: red;
+    color: rgb(189, 0, 0);
 }
 
 legend {
@@ -89,6 +89,11 @@ input {
     height: 2.5em;
     width: 22em;
     padding: 0 1em;
+    margin-bottom: 2em;
+}
+
+.label_p{
+    margin-bottom: 0;
 }
 
 #input_container, .content_center_container {
@@ -189,4 +194,8 @@ a:visited {
 
 a:hover {
     color: #0ab89b;
+}
+
+div.error_box{
+  color: rgb(255, 51, 0);
 }
