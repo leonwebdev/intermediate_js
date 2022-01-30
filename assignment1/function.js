@@ -104,6 +104,19 @@ function validateForm(e, el) {
         error_boxes.error_box[i].innerHTML = error_boxes.error_message[i];
         console.log(error_boxes);
     }
+    // check if there is any error currently
+    // if there is an error, stop the function
+    var factor_any_error = '';
+    for (let i = 0; i < error_boxes.error_message.length; i++) {
+        factor_any_error += error_boxes.error_message[i];
+        console.log(factor_any_error);
+    }
+    
+    if (factor_any_error != '') {
+        return;
+    }
+
+    console.log('there is no error, let\'s proceed')
 }
 
 function validateFirstName() {
@@ -112,6 +125,8 @@ function validateFirstName() {
         error_flag = true;
         error_boxes.error_message[0] = 'Please input first name';
         console.log(error_flag);
+    } else {
+        error_flag = false;
     }
 }
 
@@ -121,6 +136,8 @@ function validateLastName() {
         error_flag = true;
         error_boxes.error_message[1] = 'Please input last name';
         console.log(error_flag);
+    } else {
+        error_flag = false;
     }
 }
 
@@ -131,10 +148,12 @@ function validateEmail() {
         error_flag = true;
         error_boxes.error_message[2] = 'Please input email';
         console.log(error_flag);
-    }else if (factor == -1) {
+    } else if (factor == -1) {
         error_flag = true;
         error_boxes.error_message[2] = 'Please input valid email with \'@\' symbol';
         console.log(error_flag);
+    } else {
+        error_flag = false;
     }
 }
 
@@ -145,10 +164,12 @@ function validatePostalCode() {
         error_flag = true;
         error_boxes.error_message[3] = 'Please input postal code';
         console.log(error_flag);
-    }else if (factor != 6) {
+    } else if (factor != 6) {
         error_flag = true;
         error_boxes.error_message[3] = 'Please input valid 6-characters postal code';
         console.log(error_flag);
+    } else {
+        error_flag = false;
     }
 }
 
@@ -160,10 +181,12 @@ function validatePhone() {
         error_flag = true;
         error_boxes.error_message[4] = 'Please input phone number';
         console.log(error_flag);
-    }else if (factor != 10) {
+    } else if (factor != 10) {
         error_flag = true;
         error_boxes.error_message[4] = 'Please input valid phone number in a format of 123-123-1234 ';
         console.log(error_flag);
+    } else {
+        error_flag = false;
     }
 }
 
@@ -176,10 +199,12 @@ function validateAge() {
         error_flag = true;
         error_boxes.error_message[5] = 'Please input age';
         console.log(error_flag);
-    }else if (factor == true) {
+    } else if (factor == true) {
         error_flag = true;
         error_boxes.error_message[5] = 'Please input valid age with a number';
         console.log(error_flag);
+    } else {
+        error_flag = false;
     }
 }
 
@@ -192,10 +217,12 @@ function validateWebUrl() {
         error_flag = true;
         error_boxes.error_message[6] = 'Please input website url';
         console.log(error_flag);
-    }else if (factor_length < 10 ) {
+    } else if (factor_length < 10) {
         error_flag = true;
         error_boxes.error_message[6] = 'Please input valid web url';
         console.log(error_flag);
+    } else {
+        error_flag = false;
     }
 }
 
