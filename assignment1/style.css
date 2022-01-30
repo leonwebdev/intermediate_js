@@ -1,0 +1,102 @@
+body {
+    margin: 0 auto;
+    width: min-content;
+    min-width: 500px;
+    font-size: 16px;
+    font-family: 'Murecho', Helvetica, Arial, Sans-Serif;
+    padding-bottom: 50px;
+    padding-top: 1px;
+
+}
+
+.btn {
+    background: #2b90ee;
+    border-radius: 999px;
+    box-shadow: #2b90ee 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    cursor: pointer;
+    padding: 8px 18px;
+    border: 0;
+    display: inline-block;
+    margin: 50px auto;
+    width: 130px;
+    transition: all .3s ease-in-out;
+}
+
+button:hover {
+    background: #0068ca;
+    box-shadow: #0068ca 0 10px 20px -10px;
+    transform: scale(1.1);
+}
+
+.s-box {
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+fieldset.s-box {
+    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    border: 0;
+    
+}
+
+h1 {
+    width: max-content;
+    font-size: 2.5em;
+    margin: 70px auto 30px auto;
+    background: rgb(17, 132, 252);
+    background: linear-gradient(147deg, rgba(17, 132, 252, 1) 9%, rgba(251, 23, 72, 1) 55%, rgb(255, 220, 21) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#time_showbox{
+    margin-bottom: 1.5em;
+    font-weight: 400;
+}
+
+.required_input::before {
+    content: '* ';
+    color: red;
+}
+legend{
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background: #666666;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1.1em;
+    line-height: 24px;
+    opacity: 1;
+    padding: 10px 18px 13px 18px;
+    border: 0;
+    min-width: 130px;
+}
+
+input{
+    height: 2.5em;
+    width: 22em;
+    padding: 0 1em;
+}
+
+#input_container, .content_center_container{
+    margin: 0 auto;
+    width: min-content;
+}
+#btn_container{
+    width: max-content;
+}
+[type=submit]{
+    margin-right: 3em;
+}
