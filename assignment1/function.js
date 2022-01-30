@@ -96,6 +96,7 @@ function validateForm(e, el) {
     validatePostalCode();
     validatePhone();
     validateAge();
+    validateWebUrl();
 
     // show error boxes on page
     for (let i = 0; i < error_box_query.length; i++) {
@@ -178,6 +179,22 @@ function validateAge() {
     }else if (factor == true) {
         error_flag = true;
         error_boxes.error_message[5] = 'Please input valid age with a number';
+        console.log(error_flag);
+    }
+}
+
+function validateWebUrl() {
+    let v_web_url = document.getElementById('registration').web_url.value;
+    console.log(v_web_url);
+    let factor_length = v_web_url.length;
+    console.log(factor_length);
+    if (v_web_url == '') {
+        error_flag = true;
+        error_boxes.error_message[6] = 'Please input website url';
+        console.log(error_flag);
+    }else if (factor_length < 10 ) {
+        error_flag = true;
+        error_boxes.error_message[6] = 'Please input valid web url';
         console.log(error_flag);
     }
 }
