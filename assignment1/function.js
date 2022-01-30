@@ -95,6 +95,7 @@ function validateForm(e, el) {
     validateEmail();
     validatePostalCode();
     validatePhone();
+    validateAge();
 
     // show error boxes on page
     for (let i = 0; i < error_box_query.length; i++) {
@@ -151,7 +152,7 @@ function validatePostalCode() {
 }
 
 function validatePhone() {
-    let v_phone = document.getElementById('registration').phone.value.split('-');
+    let v_phone = document.getElementById('registration').phone.value.split('-').join('');
     console.log(v_phone);
     let factor = v_phone.length;
     if (v_phone == '') {
@@ -161,6 +162,22 @@ function validatePhone() {
     }else if (factor != 10) {
         error_flag = true;
         error_boxes.error_message[4] = 'Please input valid phone number in a format of 123-123-1234 ';
+        console.log(error_flag);
+    }
+}
+
+function validateAge() {
+    let v_age = document.getElementById('registration').age.value;
+    console.log(v_age);
+    let factor = isNaN(parseInt(v_age));
+    console.log(factor);
+    if (v_age == '') {
+        error_flag = true;
+        error_boxes.error_message[5] = 'Please input age';
+        console.log(error_flag);
+    }else if (factor == true) {
+        error_flag = true;
+        error_boxes.error_message[5] = 'Please input valid age with a number';
         console.log(error_flag);
     }
 }
