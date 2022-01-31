@@ -298,5 +298,11 @@ function getCookie() {
 }
 
 function showBlankProfile() {
-    
+    // make h1 with no profile
+    document.getElementById('output_page_h1').innerHTML = '';
+    document.getElementById('output_page_h1').innerHTML = `<h1 class="output_page no_profile">Uh oh! Blank Frofile?!!</h1>`;
+
+    // make register_success_box deperacated
+    document.getElementById('register_success_box').innerHTML = '';
+
 }
