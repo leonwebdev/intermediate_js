@@ -19,13 +19,14 @@
         <h1 class="output_page no_profile">Uh oh! Blank Frofile?!!</h1> -->
     </div>
 
-    <h2 id="time_showbox">Wednesday, 29 January 2022, 1:23 AM</h2>
+    <!-- <h2 id="time_showbox">Wednesday, 29 January 2022, 1:23 AM</h2> -->
+    <h2 id="time_showbox"></h2>
 
     <div id="register_success_box" class="flex_box_container">
         <div id="profile_showbox" class="s-box">
-            <div class="showbox_item">profile_showbox1</div>
-            <div class="showbox_item">profile_showbox2</div>
-            <div class="showbox_item">profile_showbox3</div>
+            <!-- <div class="showbox_item">profile_showbox1</div> -->
+            <!-- <div class="showbox_item">profile_showbox2</div> -->
+            <!-- <div class="showbox_item">profile_showbox3</div> -->
         </div>
 
         <div id="profile_buttons" class="s-box">
@@ -53,10 +54,13 @@
         var is_cookie_fulfilled = getCookie();
         if (is_cookie_fulfilled == 'cookie_empty') {
             showBlankProfile();
-        } else if(is_cookie_fulfilled == 'cookie_extract_value_succeed') {
+        } else if (is_cookie_fulfilled == 'cookie_extract_value_succeed') {
             console.log(cookie_matrix);
             console.log('cookie_matrix fulfilled');
+
+            showSuccessProfile();
         }
+
     </script>
 </body>
 

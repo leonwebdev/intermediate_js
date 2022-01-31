@@ -298,11 +298,32 @@ function getCookie() {
 }
 
 function showBlankProfile() {
-    // make h1 with no profile
+    // make h1 with blank profile
     document.getElementById('output_page_h1').innerHTML = '';
     document.getElementById('output_page_h1').innerHTML = `<h1 class="output_page no_profile">Uh oh! Blank Frofile?!!</h1>`;
 
     // make register_success_box deperacated
     document.getElementById('register_success_box').innerHTML = '';
 
+}
+
+function showSuccessProfile() {
+    // make h1 with success profile
+    document.getElementById('output_page_h1').innerHTML = '';
+    document.getElementById('output_page_h1').innerHTML = `<h1 class="output_page">Thanks For Registering!</h1>`;
+
+    // make register_fail_box deperacated
+    document.getElementById('register_fail_box').innerHTML = '';
+
+    // output profile extracted from cookie
+    document.getElementById('profile_showbox').innerHTML = '';
+    document.getElementById('profile_showbox').innerHTML = `
+            <div class="showbox_item">First Name: <strong>${cookie_matrix.values[cookie_matrix.keys.indexOf('firstname')]}</strong></div>
+            <div class="showbox_item">Last Name: <strong>${cookie_matrix.values[cookie_matrix.keys.indexOf('lastname')]}</strong></div>
+            <div class="showbox_item">Email: <strong>${cookie_matrix.values[cookie_matrix.keys.indexOf('email')]}</strong></div>
+            <div class="showbox_item">Phone: <strong>${cookie_matrix.values[cookie_matrix.keys.indexOf('phone')]}</strong></div>
+            <div class="showbox_item">Postal Code: <strong>${cookie_matrix.values[cookie_matrix.keys.indexOf('postalcode')]}</strong></div>
+            <div class="showbox_item">Age: <strong>${cookie_matrix.values[cookie_matrix.keys.indexOf('age')]}</strong></div>
+            <div class="showbox_item">URL: <a id="weburl_showtime" href="${cookie_matrix.values[cookie_matrix.keys.indexOf('weburl')]}">${cookie_matrix.values[cookie_matrix.keys.indexOf('weburl')]}</a></div>
+    `;
 }

@@ -92,7 +92,7 @@ input {
     margin-bottom: 2em;
 }
 
-.label_p{
+.label_p {
     margin-bottom: 0;
 }
 
@@ -182,9 +182,6 @@ a {
     outline: none;
     text-decoration: none;
     font-weight: 700;
-}
-
-a:link {
     color: #ff1100;
 }
 
@@ -196,6 +193,18 @@ a:hover {
     color: #0ab89b;
 }
 
-div.error_box{
-  color: rgb(255, 51, 0);
+div.error_box {
+    color: rgb(255, 51, 0);
+}
+
+a#weburl_showtime {
+    color: #0099ff;
+}
+
+a#weburl_showtime:visited {
+    color: #5315e6;
+}
+
+a#weburl_showtime:hover {
+    color: #0ab89b;
 }
