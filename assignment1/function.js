@@ -135,25 +135,30 @@ function validateForm(e, el) {
 
     // initial form input to get value
     for (let i = 0; i < input_name_query.length; i++) {
-        
+
         form_input.input_name[i] = input_name_query[i];
         console.log(form_input.input_name);
         form_input.input_value[i] = input_name_query[i].value;
         console.log(form_input.input_value);
     }
-    
+
     // assign values to cookie matrix
-    cookie_matrix.keys = ['firstname','lastname','email','postalcode','phone','age','weburl'];
+    cookie_matrix.keys = ['firstname', 'lastname', 'email', 'postalcode', 'phone', 'age', 'weburl'];
     console.log(cookie_matrix.keys);
 
     for (let i = 0; i < cookie_matrix.keys.length; i++) {
-        
-         cookie_matrix.values[i] = form_input.input_value[i];
-         console.log(cookie_matrix.values);
+
+        cookie_matrix.values[i] = form_input.input_value[i];
+        console.log(cookie_matrix.values);
     }
 
     // write cookie matrix into document.cookie
-    
+    var expire_after = 60 * 60 * 24 * 365 * 2;
+    for (let i = 0; i < cookie_matrix.keys.length; i++) {
+
+        document.cookie = cookie_matrix.keys[i] + '=' + encodeURIComponent(cookie_matrix.values[i]) + '; Max-Age=' + expire_after;
+        console.log(document.cookie);
+    }
     // jump to output page
     // window.location.href = "output.html";
 }
