@@ -300,7 +300,7 @@ function getCookie() {
 function showBlankProfile() {
     // make h1 with blank profile
     document.getElementById('output_page_h1').innerHTML = '';
-    document.getElementById('output_page_h1').innerHTML = `<h1 class="output_page no_profile">Uh oh! Blank Frofile?!!</h1>`;
+    document.getElementById('output_page_h1').innerHTML = `<h1 class="output_page no_profile">Uh oh! Blank Profile?!!</h1>`;
 
     // make register_success_box deperacated
     document.getElementById('register_success_box').innerHTML = '';
@@ -334,5 +334,16 @@ function showIceCream() {
 }
 
 function deleteAllCookies() {
-    
+    // delete cookies one by one
+    for (let i = 0; i < cookie_matrix.keys.length; i++) {
+        document.cookie = cookie_matrix.keys[i] + '= ;Max-Age=-1';
+        console.log(document.cookie);
+    }
+    // erase cookie matrix
+    cookie_matrix = {
+        keys: [],
+        values: []
+    }
+    //  refresh the page
+    window.location.href = "output.html";
 }

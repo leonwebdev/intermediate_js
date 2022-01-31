@@ -143,7 +143,7 @@ button.btn.output_page {
 }
 
 .showbox_item {
-    background: #eeeeee;
+    background: #f7f7f7;
     border-radius: 10px;
     box-sizing: border-box;
     color: #000;
@@ -162,7 +162,7 @@ button.btn.output_page {
 }
 
 div.showbox_item:nth-of-type(even) {
-    background: #c9c9c9;
+    background: #ebebeb;
 }
 
 div.showbox_item:last-of-type {
