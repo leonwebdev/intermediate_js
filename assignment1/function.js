@@ -304,8 +304,10 @@ function validateAge() {
 function validateWebUrl() {
     let v_web_url = document.getElementById('registration').web_url.value;
     console.log(v_web_url);
+    // get the length of the value
     let factor_length = v_web_url.length;
     console.log(factor_length);
+    // get the first 6,7,8 characters of the string
     let factor_first_six = v_web_url.substring(0, 6);
     console.log(factor_first_six);
     let factor_first_seven = v_web_url.substring(0, 7);
