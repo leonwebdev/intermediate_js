@@ -270,3 +270,33 @@ function validateWebUrl() {
     }
 }
 
+function getCookie() {
+
+    // erase all previous data prior to print
+    cookie_matrix = {
+        keys: [],
+        values: []
+    }
+    // split cookie into individual arraies
+    var cookie_array = document.cookie.split(';');
+    console.log(cookie_array);
+
+    // judge if cookie is empty
+    if (cookie_array == '') {
+        return 'cookie_empty';
+    }
+
+    // extract keys and values into cookie matrix
+    for (let i = 0; i < cookie_array.length; i++) {
+        var raw_cookie = cookie_array[i].split('=');
+        console.log(raw_cookie);
+        cookie_matrix.keys.push(raw_cookie[0].trim());
+        cookie_matrix.values.push(decodeURIComponent(raw_cookie[1].trim()));
+    }
+    console.log(cookie_matrix);
+    return 'cookie_extract_value_succeed';
+}
+
+function showBlankProfile() {
+    
+}

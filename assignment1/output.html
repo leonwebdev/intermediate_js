@@ -49,6 +49,14 @@
     <script>
         document.getElementById('time_showbox').innerHTML = '';
         document.getElementById('time_showbox').innerHTML = showTime();
+
+        var is_cookie_fulfilled = getCookie();
+        if (is_cookie_fulfilled == 'cookie_empty') {
+            showBlankProfile();
+        } else if(is_cookie_fulfilled == 'cookie_extract_value_succeed') {
+            console.log(cookie_matrix);
+            console.log('cookie_matrix fulfilled');
+        }
     </script>
 </body>
 
