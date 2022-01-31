@@ -79,8 +79,19 @@ function showTime() {
 
 }
 
+/**
+ * [validateForm validate the form]
+ *
+ * @param   {[event]}  e   [e the default event]
+ * @param   {[this]}  el  [el the current element]
+ *
+ * @return  {[void]}      [return void]
+ */
 function validateForm(e, el) {
+    // prevent submit the form
     e.preventDefault();
+
+    // erase all data in error_boxes
     error_boxes = {
         error_box: [],
         error_message: []
@@ -100,6 +111,7 @@ function validateForm(e, el) {
         console.log(error_boxes);
     }
 
+    // validate all fields
     validateFirstName();
     validateLastName();
     validateEmail();
@@ -126,6 +138,7 @@ function validateForm(e, el) {
         return;
     }
 
+    // if there is no error, let's move on
     console.log('there is no error, let\'s proceed');
 
     // manipulate cookie begin here
@@ -152,7 +165,7 @@ function validateForm(e, el) {
         console.log(cookie_matrix.values);
     }
 
-    // write cookie matrix into document.cookie
+    // write cookie matrix into document.cookie and set expired time
     var expire_after = 60 * 60 * 24 * 365 * 2;
     for (let i = 0; i < cookie_matrix.keys.length; i++) {
 
@@ -163,6 +176,11 @@ function validateForm(e, el) {
     window.location.href = "output.html";
 }
 
+/**
+ * [validateFirstName validate first name]
+ *
+ * @return  {[void]}  [return void]
+ */
 function validateFirstName() {
     let v_first_name = document.getElementById('registration').first_name.value;
     if (v_first_name == '') {
@@ -174,6 +192,11 @@ function validateFirstName() {
     }
 }
 
+/**
+ * [validateLastName validate last name]
+ *
+ * @return  {[void]}  [return void]
+ */
 function validateLastName() {
     let v_last_name = document.getElementById('registration').last_name.value;
     if (v_last_name == '') {
@@ -185,6 +208,12 @@ function validateLastName() {
     }
 }
 
+
+/**
+ * [validateEmail validate email]
+ *
+ * @return  {[void]}  [return void]
+ */
 function validateEmail() {
     let v_email = document.getElementById('registration').email.value;
     let factor = v_email.indexOf('@');
@@ -201,6 +230,11 @@ function validateEmail() {
     }
 }
 
+/**
+ * [validatePostalCode validate postal code]
+ *
+ * @return  {[void]}  [return void]
+ */
 function validatePostalCode() {
     let v_postal_code = document.getElementById('registration').postal_code.value;
     let factor = v_postal_code.length;
@@ -217,6 +251,11 @@ function validatePostalCode() {
     }
 }
 
+/**
+ * [validatePhone validate phone number]
+ *
+ * @return  {[void]}  [return void]
+ */
 function validatePhone() {
     let v_phone = document.getElementById('registration').phone.value.split('-').join('');
     console.log(v_phone);
@@ -234,6 +273,11 @@ function validatePhone() {
     }
 }
 
+/**
+ * [validateAge validate age]
+ *
+ * @return  {[void]}  [return void]
+ */
 function validateAge() {
     let v_age = document.getElementById('registration').age.value;
     console.log(v_age);
@@ -252,6 +296,11 @@ function validateAge() {
     }
 }
 
+/**
+ * [validateWebUrl validate web url]
+ *
+ * @return  {[void]}  [return void]
+ */
 function validateWebUrl() {
     let v_web_url = document.getElementById('registration').web_url.value;
     console.log(v_web_url);
@@ -270,9 +319,15 @@ function validateWebUrl() {
     }
 }
 
+/**
+ * [getCookie get information from cookie, may return two different value]
+ *
+ * @return  {[string]}  [return cookie_empty if there is nothing in cookie]
+ * @return  {[string]}  [return cookie_extract_value_succeed if succeed to get information from cookie]
+ */
 function getCookie() {
 
-    // erase all previous data prior to print
+    // erase all previous data prior to assign value
     cookie_matrix = {
         keys: [],
         values: []
@@ -297,6 +352,11 @@ function getCookie() {
     return 'cookie_extract_value_succeed';
 }
 
+/**
+ * [showBlankProfile output information on page if the cookie is empty]
+ *
+ * @return  {[void]}  [return void]
+ */
 function showBlankProfile() {
     // make h1 with blank profile
     document.getElementById('output_page_h1').innerHTML = '';
@@ -307,6 +367,12 @@ function showBlankProfile() {
 
 }
 
+
+/**
+ * [showSuccessProfile output information on page if extract information from cookie]
+ *
+ * @return  {[void]}  [return void]
+ */
 function showSuccessProfile() {
     // make h1 with success profile
     document.getElementById('output_page_h1').innerHTML = '';
@@ -328,11 +394,21 @@ function showSuccessProfile() {
     `;
 }
 
+/**
+ * [showIceCream output an ice cream emoji on page if user click complete]
+ *
+ * @return  {[void]}  [return void]
+ */
 function showIceCream() {
     document.getElementById('complete_award').innerHTML = '';
     document.getElementById('complete_award').innerHTML = '&#127846;';
 }
 
+/**
+ * [deleteAllCookies delete all cookies and refresh page and show blank profile]
+ *
+ * @return  {[void]}  [return void]
+ */
 function deleteAllCookies() {
     // delete cookies one by one
     for (let i = 0; i < cookie_matrix.keys.length; i++) {
