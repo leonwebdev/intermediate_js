@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lihang Yao - Assignment 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="output_page_h1">
+        <!-- <h1 class="output_page">Thanks For Registering!</h1>
+        <h1 class="output_page no_profile">Uh oh! Blank Profile?!!</h1> -->
+    </div>
+
+    <!-- <h2 id="time_showbox">Wednesday, 29 January 2022, 1:23 AM</h2> -->
+    <h2 id="time_showbox"></h2>
+
+    <div id="register_success_box" class="flex_box_container">
+        <div id="profile_showbox" class="s-box">
+            <!-- <div class="showbox_item">profile_showbox1</div> -->
+            <!-- <div class="showbox_item">profile_showbox2</div> -->
+            <!-- <div class="showbox_item">profile_showbox3</div> -->
+        </div>
+
+        <div id="profile_buttons" class="s-box">
+            <div id="btn_container" class="output_page">
+                <div><button class="btn output_page" onclick="showIceCream()">Complete</button></div>
+                <div><button class="btn output_page" onclick="deleteAllCookies()">Delete Profile</button></div>
+                <!-- <div id="complete_award">&#127846;</div> -->
+                <div id="complete_award"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="register_fail_box" class="flex_box_container">
+        <div id="profile_showbox" class="s-box">
+            <div class="register_fail_line">Here exhibits a blank profile.</div>
+            <div class="register_fail_line"><a class="" href="index.html">Register Now&nbsp;</a> for a free ice cream.
+            </div>
+        </div>
+    </div>
+
+    <script src="./function.js"></script>
+    <script>
+        document.getElementById('time_showbox').innerHTML = '';
+        document.getElementById('time_showbox').innerHTML = showTime();
+
+        var is_cookie_fulfilled = getCookie();
+        if (is_cookie_fulfilled == 'cookie_empty') {
+            showBlankProfile();
+        } else if (is_cookie_fulfilled == 'cookie_extract_value_succeed') {
+            console.log(cookie_matrix);
+            console.log('cookie_matrix fulfilled');
+
+            showSuccessProfile();
+        }
+
+    </script>
+</body>
+
+</html>

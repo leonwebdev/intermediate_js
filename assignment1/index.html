@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lihang Yao - Assignment 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1>Register For a Free Ice Cream</h1>
+    <h2 id="time_showbox">Wednesday, 29 January 2022, 1:23 AM</h2>
+
+    <form name="registration" id="registration" action="https://uwpace.ca/post.php" method="post"
+        onsubmit="validateForm(event,this);" novalidate>
+        <fieldset class="s-box">
+            <legend class="">Register Form</legend>
+
+            <div id="input_container">
+                <p class="label_p"><label for="first_name" class="required_input">First Name</label></p>
+                <div class="error_box" id="first_name_error_box"></div>
+                <p><input type="text" name="first_name" id="first_name"></p>
+
+                <p class="label_p"><label for="last_name" class="required_input">Last Name</label></p>
+                <div class="error_box" id="last_name_error_box"></div>
+                <p><input type="text" name="last_name" id="last_name"></p>
+
+                <p class="label_p"><label for="email" class="required_input">Email</label></p>
+                <div class="error_box" id="email_error_box"></div>
+                <p><input type="text" name="email" id="email"></p>
+
+                <p class="label_p"><label for="postal_code" class="required_input">Post Code</label></p>
+                <div class="error_box" id="postal_code_error_box"></div>
+                <p><input type="text" name="postal_code" id="postal_code"></p>
+
+                <p class="label_p"><label for="phone" class="required_input">Phone</label></p>
+                <div class="error_box" id="phone_error_box"></div>
+                <p><input type="text" name="phone" id="phone"></p>
+
+                <p class="label_p"><label for="age">Age</label></p>
+                <div class="error_box" id="age_error_box"></div>
+                <p><input type="text" name="age" id="age"></p>
+
+                <p class="label_p"><label for="web_url">Website URL</label></p>
+                <div class="error_box" id="web_url_error_box"></div>
+                <p><input type="text" name="web_url" id="web_url"></p>
+
+                <div><span style="color: rgb(189, 0, 0);">*</span> indicates a required fulfillment</div>
+            </div>
+            <div class="content_center_container">
+                <div id="btn_container">
+                    <button class="btn" type="submit">Submit</button>
+                    <button class="btn" type="reset">Clear Form</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <script src="./function.js"></script>
+    <script>
+        document.getElementById('time_showbox').innerHTML = '';
+        document.getElementById('time_showbox').innerHTML = showTime();
+    </script>
+</body>
+
+</html>
