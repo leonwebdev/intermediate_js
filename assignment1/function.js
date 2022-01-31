@@ -142,6 +142,18 @@ function validateForm(e, el) {
         console.log(form_input.input_value);
     }
     
+    // assign values to cookie matrix
+    cookie_matrix.keys = ['firstname','lastname','email','postalcode','phone','age','weburl'];
+    console.log(cookie_matrix.keys);
+
+    for (let i = 0; i < cookie_matrix.keys.length; i++) {
+        
+         cookie_matrix.values[i] = form_input.input_value[i];
+         console.log(cookie_matrix.values);
+    }
+
+    // write cookie matrix into document.cookie
+    
     // jump to output page
     // window.location.href = "output.html";
 }
