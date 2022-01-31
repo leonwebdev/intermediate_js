@@ -160,7 +160,7 @@ function validateForm(e, el) {
         console.log(document.cookie);
     }
     // jump to output page
-    // window.location.href = "output.html";
+    window.location.href = "output.html";
 }
 
 function validateFirstName() {
