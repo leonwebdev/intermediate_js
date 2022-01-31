@@ -327,3 +327,12 @@ function showSuccessProfile() {
             <div class="showbox_item">URL: <a id="weburl_showtime" href="${cookie_matrix.values[cookie_matrix.keys.indexOf('weburl')]}">${cookie_matrix.values[cookie_matrix.keys.indexOf('weburl')]}</a></div>
     `;
 }
+
+function showIceCream() {
+    document.getElementById('complete_award').innerHTML = '';
+    document.getElementById('complete_award').innerHTML = '&#127846;';
+}
+
+function deleteAllCookies() {
+    
+}
