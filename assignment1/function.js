@@ -11,6 +11,10 @@ var cookie_matrix = {
     values: []
 }
 
+var form_input = {
+    input_name: [],
+    input_value: []
+}
 /**
  * [showTime : get the current Time and return a string of a formatted date]
  *
@@ -124,7 +128,22 @@ function validateForm(e, el) {
 
     console.log('there is no error, let\'s proceed');
 
-    window.location.href = "output.html";
+    // manipulate cookie begin here
+    // assign all value into form_input
+    let input_name_query = document.querySelectorAll('input');
+    console.log(input_name_query);
+
+    // initial form input to get value
+    for (let i = 0; i < input_name_query.length; i++) {
+        
+        form_input.input_name[i] = input_name_query[i];
+        console.log(form_input.input_name);
+        form_input.input_value[i] = input_name_query[i].value;
+        console.log(form_input.input_value);
+    }
+    
+    // jump to output page
+    // window.location.href = "output.html";
 }
 
 function validateFirstName() {
