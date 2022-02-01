@@ -11,11 +11,24 @@ window.onload = function () {
     }
     // get the collection of tds
     var tds = document.getElementsByTagName('td');
-    // *****************FUNCTIONS*****************
+    // get the collection of headings
+    var headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    console.log(headings);
 
+    // *****************FUNCTIONS*****************
+    // apply color to headings everytime open the page
+    applyColor();
     function applyColor() {
         // read the cookie and apply color
         extractCookie();
+        var color_v = cookie_matrix.values[0];
+        console.log(color_v);
+        var headings_to_cope_with = [...headings];
+        console.log(headings_to_cope_with);
+        for (let i = 0; i < headings_to_cope_with.length; i++) {
+            
+            headings_to_cope_with[i].style.color = color_v;
+        }
     }
 
     /**
