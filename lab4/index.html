@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Color Selector</title>
+	<script src="app.js"></script>
+	<style>
+
+	#content {
+		display: flex;
+	}
+
+	#content>div {
+		flex: 1;
+	}
+
+	table {
+		border-collapse: collapse;
+		border: 1px solid #cfcfcf;
+	}
+
+	td {
+		width: 100px;
+		padding: 40px 0;
+		text-align: center;
+		border: 1px solid #cfcfcf;
+	}
+
+	td span {
+		line-height: 20px;
+		background: #fff;
+		color: #000;
+		padding: 0 4px;
+	}
+
+	</style>
+
+
+</head>
+<body>
+
+<div id="content">
+
+	<div id="table">
+
+	<h1>Color Selector</h1>
+
+	<h2>Select a color for headings</h2>
+
+	<p>The color you select will be applied to all headers in the preview pane to the right.</p>
+
+<table>
+
+<tr>
+	<td data-clr="aqua"><span>aqua</span></td>
+	<td data-clr="black"><span>black</span></td>
+	<td data-clr="blue"><span>blue</span></td>
+	<td data-clr="fuchsia"><span>fuchsia</span></td>
+</tr>
+
+<tr>
+	<td data-clr="gray"><span>gray</span></td>
+	<td data-clr="green"><span>green</span></td>
+	<td data-clr="lime"><span>lime</span></td>
+	<td data-clr="maroon"><span>maroon</span></td>
+</tr>
+
+<tr>
+	<td data-clr="navy"><span>navy</span></td>
+	<td data-clr="olive"><span>olive</span></td>
+	<td data-clr="purple"><span>purple</span></td>
+	<td data-clr="red"><span>red</span></td>
+</tr>
+
+<tr>
+	<td data-clr="silver"><span>silver</span></td>
+	<td data-clr="teal"><span>teal</span></td>
+	<td data-clr="white"><span>white</span></td>
+	<td data-clr="yellow"><span>yellow</span></td>
+</tr>
+
+</table>
+
+</div><!--/.table -->
+
+<div id="preview">
+
+<h1>HTML Ipsum Presents</h1>
+
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em></p>
+
+<h2>Header Level 2</h2>
+
+<p>Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+<h3>Header level 3</h3>
+
+<ol>
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+</ol>
+
+<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+
+<h4>Header Level 4</h4>
+
+<ul>
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+</ul>
+
+<pre><code>
+#header h1 a {
+  display: block;
+  width: 300px;
+  height: 80px;
+}
+</code></pre>
+
+</div>
+
+</div>
+
+<script>
+
+const _0x128a=['backgroundColor','1207990wVzWHr','21124zMrFOk','622016lNprzN','211OrPqRb','870231vGXlpe','3407yyICQO','2632mXoXvj','186458GJbuuT','getElementsByTagName','length','init','149NUSexr'];const _0x5cb6=function(_0xf788ee,_0x50373a){_0xf788ee=_0xf788ee-0xfa;let _0x128aca=_0x128a[_0xf788ee];return _0x128aca;};const _0x1e2eab=_0x5cb6;(function(_0x8c00e3,_0x2b280e){const _0x5895a7=_0x5cb6;while(!![]){try{const _0x465b42=parseInt(_0x5895a7(0x103))*parseInt(_0x5895a7(0xfb))+parseInt(_0x5895a7(0xfd))+-parseInt(_0x5895a7(0xfe))+-parseInt(_0x5895a7(0xff))+-parseInt(_0x5895a7(0x104))+-parseInt(_0x5895a7(0x101))+parseInt(_0x5895a7(0x102))*parseInt(_0x5895a7(0x100));if(_0x465b42===_0x2b280e)break;else _0x8c00e3['push'](_0x8c00e3['shift']());}catch(_0x35df90){_0x8c00e3['push'](_0x8c00e3['shift']());}}}(_0x128a,0x972c6));const TABLE={'init':function(){const _0x6f1b6=_0x5cb6;var _0x224a99=document[_0x6f1b6(0x105)]('td');for(let _0x3f4c3f=0x0;_0x3f4c3f<_0x224a99[_0x6f1b6(0x106)];_0x3f4c3f++){let _0x4dde23=_0x224a99[_0x3f4c3f]['getAttribute']('data-clr');_0x224a99[_0x3f4c3f]['style'][_0x6f1b6(0xfc)]=_0x4dde23;}}};TABLE[_0x1e2eab(0xfa)]();
+	
+</script>
+
+</body>
+</html>
