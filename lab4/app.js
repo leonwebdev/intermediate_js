@@ -28,9 +28,10 @@ window.onload = function () {
     function applyColor() {
         // read the cookie and apply color
         extractCookie();
-
+        console.log(cookie_matrix.values[0]);
         // judge if cookie is empty, stop the function
-        if (cookie_matrix.values[0] == '') {
+        if (!cookie_matrix.values[0]) {
+            console.log('no color in cookie');
             return;
         }
 
