@@ -18,15 +18,28 @@ window.onload = function () {
     // *****************FUNCTIONS*****************
     // apply color to headings everytime open the page
     applyColor();
+
+
+    /**
+     * [applyColor extract color from cookie and apply color to headings]
+     *
+     * @return  {[void]}  [return void]
+     */
     function applyColor() {
         // read the cookie and apply color
         extractCookie();
+
+        // judge if cookie is empty, stop the function
+        if (cookie_matrix.values[0] == '') {
+            return;
+        }
+
         var color_v = cookie_matrix.values[0];
         console.log(color_v);
         var headings_to_cope_with = [...headings];
         console.log(headings_to_cope_with);
         for (let i = 0; i < headings_to_cope_with.length; i++) {
-            
+
             headings_to_cope_with[i].style.color = color_v;
         }
     }
