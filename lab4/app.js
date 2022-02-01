@@ -15,6 +15,7 @@ window.onload = function () {
 
     function applyColor() {
         // read the cookie and apply color
+        extractCookie();
     }
 
     /**
@@ -57,7 +58,9 @@ window.onload = function () {
         tds[i].onclick = function (e) {
             var clr_v = this.dataset.clr;
             console.log(clr_v);
-            document.cookie = 'colorName=' + clr_v;
+            // write clr_v into document.cookie and set expired time
+            var expire_after = 60 * 60 * 24 * 365;
+            document.cookie = 'colorName=' + encodeURIComponent(clr_v) + '; Max-Age=' + expire_after;
             console.log(document.cookie);
             applyColor();
         }
