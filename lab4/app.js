@@ -34,7 +34,7 @@ window.onload = function () {
             console.log('no color in cookie');
             return;
         }
-
+        //  apply the color to headings
         var color_v = cookie_matrix.values[0];
         console.log(color_v);
         var headings_to_cope_with = [...headings];
