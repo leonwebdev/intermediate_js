@@ -10,6 +10,7 @@ $(document).ready(function () {
     colorH3InSecondaryBlue();
     boldFirstParagraphInMain();
     boldLastParagraphInSecondary();
+    hideAllAnnoyAnnounce();
 });
 
 
@@ -62,3 +63,6 @@ function boldLastParagraphInSecondary() {
     );
 }
 
+function hideAllAnnoyAnnounce() {
+    
+}
