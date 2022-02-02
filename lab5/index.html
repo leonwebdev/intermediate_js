@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Intermediate Javascript - Lab 5</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="app.js"></script>
+	<style>
+
+		div {
+			box-sizing: border-box;
+			padding: 10px;
+		}
+
+		#container {
+			position: relative;
+			height: 100px;
+			width: 100%;
+		}
+
+		#move_me {
+			width: 100px;
+			height: 75px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: black;
+			color: #fff;
+		}
+
+		.content > div {
+			border: 1px solid #cfcfcf;
+			margin: 10px 0;
+		}
+
+		#head h1 {
+			margin-top: 0;
+		}
+
+		.annoying {
+			display: inline-block;
+			background: #ffcccb;
+			color: #990000;
+		}
+
+
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id="move_me">
+		<h3>Move me!</h3>
+	</div>
+</div>
+
+	<div id="head">
+
+
+		<h1 id="title">Lab 5</h1>
+
+	<ol>
+		<li><a id="remove_deprecated" href="#">Strikeout Deprecated Search Engines and disable link</a></li>
+		<li><a id="main_h2" href="#">Color the h2 heading in .main red</a></li>
+		<li><a id="secondary_h3" href="#">Color the h3 heading in .secondary blue</a></li>
+		<li><a id="bold_p_main" href="#">Bold first paragraph in .main</a></li>
+		<li><a id="bold_p_secondary" href="#">Bold last paragraph in .secondary</a></li>
+		<li><a id="hide_annoying" href="#">Hide all annoying announcements</a></li>
+		<li><a id="show_annoying" href="#">Show all annoying announcements</a></li>
+	</ol>
+
+	<h4>If you feel comfortable...</h4>
+
+	<ul>
+		<li><a id="move_right" href="#">Animate the move_me box to the right by 800px</a></li>
+		<li><a id="move_left" href="#">Animate the move_me box back to its starting position</a></li>
+	</ul>
+
+	</div>
+
+	<div class="content">
+		<div class="main">
+			
+			<h2>Main</h2>
+
+			<p>This is the first child paragraph in main</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commod consequat. Duis aute irure dolor in  reprehenderit in voluptate velit esse</p>
+
+			<div class="annoying">
+
+				<p>I am an annoying annoucement!</p>
+					
+			</div>
+
+
+		</div>
+
+		<div class="secondary">
+
+			<h3>Secondary</h3>
+
+			<p>This is the first paragraph of text.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+
+			<p>This is the first paragraph of text.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+
+			<div class="annoying">
+
+				<p>I am an annoying annoucement!</p>
+			</div>
+
+			<ul class="nav_list">
+				<li><a href="https://google.ca">Google</a></li>
+				<li><a href="https://bing.ca">Bing</a></li>
+				<li class="deprecated"><a href="https://altavista.com">Alta Vista</a></li>
+				<li><a href="https://yahoo.ca">Yahoo</a></li>
+				<li class="deprecated"><a href="https://webfind.com">WebFind</a></li>
+				<li><a href="https://duckduckgo.com">DuckDuckGo</a></li>
+			</ul>
+
+		</div>
+
+	</div>
+
+</body>
+</html>
