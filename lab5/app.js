@@ -4,15 +4,25 @@
  */
 
 
- $(document).ready(function(){
-     strikeOutAndDisableLink();
+$(document).ready(function () {
+    strikeOutAndDisableLink();
 
+});
+
+
+function strikeOutAndDisableLink() {
+
+    $('li.deprecated a').each(function () {
+        $(this).css(
+            {
+                'color': '#900',
+                'text-decoration': 'line-through'
+            }
+        );
+
+        $(this).click(function (e) {
+            e.preventDefault();
+            
+        });
     });
-
-
- function strikeOutAndDisableLink() {
-     
-    $('li.deprecated a').each(function(){
-
-    });
- }
+}
