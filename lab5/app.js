@@ -46,5 +46,9 @@ function colorH3InSecondaryBlue() {
 }
 
 function boldFirstParagraphInMain() {
-    
+    $('div.main>p:first-of-type').css(
+        {
+            'font-weight':'700'
+        }
+    );
 }
