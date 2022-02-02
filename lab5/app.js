@@ -28,5 +28,9 @@ function strikeOutAndDisableLink() {
 }
 
 function colorH2InMainRed() {
-    
+    $('div.main h2').css(
+        {
+            'color': 'red'
+        }
+    );
 }
