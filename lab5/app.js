@@ -9,6 +9,7 @@ $(document).ready(function () {
     colorH2InMainRed();
     colorH3InSecondaryBlue();
     boldFirstParagraphInMain();
+    boldLastParagraphInSecondary();
 });
 
 
@@ -52,3 +53,12 @@ function boldFirstParagraphInMain() {
         }
     );
 }
+
+function boldLastParagraphInSecondary() {
+    $('div.secondary>p:last-of-type').css(
+        // {
+        //     'font-weight':'700'
+        // }
+    );
+}
+
