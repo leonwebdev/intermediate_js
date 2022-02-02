@@ -64,5 +64,5 @@ function boldLastParagraphInSecondary() {
 }
 
 function hideAllAnnoyAnnounce() {
-    
+    $('.annoying').fadeOut();
 }
