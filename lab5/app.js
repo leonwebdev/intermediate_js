@@ -6,7 +6,7 @@
 
 $(document).ready(function () {
     strikeOutAndDisableLink();
-
+    colorH2InMainRed();
 });
 
 
@@ -25,4 +25,8 @@ function strikeOutAndDisableLink() {
             
         });
     });
+}
+
+function colorH2InMainRed() {
+    
 }
