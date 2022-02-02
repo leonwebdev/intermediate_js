@@ -7,6 +7,7 @@
 $(document).ready(function () {
     strikeOutAndDisableLink();
     colorH2InMainRed();
+    colorH3InSecondaryBlue();
 });
 
 
@@ -34,3 +35,12 @@ function colorH2InMainRed() {
         }
     );
 }
+
+function colorH3InSecondaryBlue() {
+    $('div.secondary h3').css(
+        // {
+        //     'color': 'blue'
+        // }
+    );
+}
+
