@@ -11,6 +11,7 @@ $(document).ready(function () {
     boldFirstParagraphInMain();
     boldLastParagraphInSecondary();
     hideAllAnnoyAnnounce();
+    showAllAnnoyAnnounce();
 });
 
 
@@ -64,5 +65,9 @@ function boldLastParagraphInSecondary() {
 }
 
 function hideAllAnnoyAnnounce() {
-    $('.annoying').fadeOut();
+    $('.annoying').fadeOut('slow');
+}
+
+function showAllAnnoyAnnounce() {
+    $('.annoying').fadeIn('slow');
 }
