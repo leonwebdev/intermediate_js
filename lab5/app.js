@@ -4,3 +4,15 @@
  */
 
 
+ $(document).ready(function(){
+     strikeOutAndDisableLink();
+
+    });
+
+
+ function strikeOutAndDisableLink() {
+     
+    $('li.deprecated a').each(function(){
+
+    });
+ }
