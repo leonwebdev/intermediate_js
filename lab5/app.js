@@ -8,6 +8,7 @@ $(document).ready(function () {
     strikeOutAndDisableLink();
     colorH2InMainRed();
     colorH3InSecondaryBlue();
+    boldFirstParagraphInMain();
 });
 
 
@@ -44,3 +45,6 @@ function colorH3InSecondaryBlue() {
     );
 }
 
+function boldFirstParagraphInMain() {
+    
+}
