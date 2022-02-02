@@ -56,9 +56,9 @@ function boldFirstParagraphInMain() {
 
 function boldLastParagraphInSecondary() {
     $('div.secondary>p:last-of-type').css(
-        // {
-        //     'font-weight':'700'
-        // }
+        {
+            'font-weight':'700'
+        }
     );
 }
 
