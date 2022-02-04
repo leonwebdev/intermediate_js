@@ -7,6 +7,7 @@ $(document).ready(function () {
     $('#large').click(function () { largeText(); });
     $('#toggle_switch').click(function () { toggleSwitch(); });
     $('#slide_box_btn').click(function () { slideBox(); });
+    $('#x_button').click(function () { fadeOutSlideBox(); });
 
     // ********* FUNCTIONS ***********
     function smallText() {
@@ -35,4 +36,17 @@ $(document).ready(function () {
 
             "slow");
     }
+
+    function fadeOutSlideBox() {
+        $("#slide_box").animate(
+
+            {
+                "left": "-=500px",
+                opacity: 0
+            },
+
+            "slow");
+    }
+
+    
 });
