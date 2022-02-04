@@ -10,7 +10,7 @@ $(document).ready(function () {
     $('#x_button').click(function () { fadeOutSlideBox(); });
 
     // ********* FUNCTIONS ***********
-    
+
     /**
      * [smallText make text size to 12px]
      *
@@ -78,4 +78,5 @@ $(document).ready(function () {
 
             "slow");
     }
+
 });
