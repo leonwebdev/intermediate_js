@@ -5,6 +5,7 @@ $(document).ready(function () {
     $('#small').click(function () { smallText(); });
     $('#medium').click(function () { mediumText(); });
     $('#large').click(function () { largeText(); });
+    $('#toggle_switch').click(function () { toggleSwitch(); });
 
     // ********* FUNCTIONS ***********
     function smallText() {
@@ -19,4 +20,7 @@ $(document).ready(function () {
         $('#text_box').css({ 'font-size': '1.6em' });
     }
 
+    function toggleSwitch() {
+        $('#text_btns').toggle('slow');
+    }
 });
