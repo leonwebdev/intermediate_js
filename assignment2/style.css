@@ -6,7 +6,7 @@
     font-family: 'Murecho', Helvetica, Arial, Sans-Serif;
     padding-bottom: 50px;
     padding-top: 1px;
-
+    margin-top: 70px;
 }
 
 .align_center {
@@ -67,7 +67,9 @@ button:hover {
     position: absolute;
     background-color: rgb(255, 253, 232);
     font-family: 'Murecho', Helvetica, Arial, Sans-Serif;
-    top: 287px;
+    top: 340px;
+    left: -250px;
+    opacity: 0;
 }
 
 #x_button {
