@@ -61,16 +61,16 @@ button:hover {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-#slide_box{
+#slide_box {
     width: min-content;
     min-width: 200px;
     position: absolute;
-    background-color: #fff;
+    background-color: rgb(255, 253, 232);
     font-family: 'Murecho', Helvetica, Arial, Sans-Serif;
     top: 287px;
 }
 
-#x_button{
+#x_button {
     border-radius: 50%;
     width: 1em;
     height: 1em;
