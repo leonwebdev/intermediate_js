@@ -1,3 +1,3 @@
 # Intermediate JS
 
-* Lihang Yao <yao-l@webmail.uwinnipeg.ca>
+* L Y <yao-l@webmail.uwinnipeg.ca>
